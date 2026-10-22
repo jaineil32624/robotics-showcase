@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "ARGO-Q4",
+    "slug": "argo-q4",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#07090c",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#07090c"
+    },
+    "android": {
+      "package": "com.jaineilrana.argoq4",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#07090c"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": []
+    },
+    "plugins": ["./plugins/withViewerAssets.js"]
+  }
+}

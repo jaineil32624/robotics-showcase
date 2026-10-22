@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>ARGO-Q4 Viewer</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #07090c; overflow: hidden; touch-action: none;
+        -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+      canvas { display: block; width: 100vw; height: 100vh; }
+      #boot { position: fixed; inset: 0; display: grid; place-items: center; color: #7c8796;
+        font: 600 11px/1.4 monospace; letter-spacing: .16em; text-transform: uppercase; }
+      #boot b { display: block; height: 2px; width: 140px; margin-top: 10px; background: linear-gradient(90deg,#ff5a1f 0 var(--p,10%),#1e2630 0); }
+    </style>
+  </head>
+  <body>
+    <div id="boot"><div>Loading ARGO-Q4<b id="bar"></b></div></div>
+    <script src="model.js"></script>
+    <script src="viewer.js"></script>
+  </body>
+</html>
