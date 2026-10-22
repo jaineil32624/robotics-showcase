@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+# copied from /assets and /renders by scripts/sync-assets.mjs
+public/models/*.glb
+public/renders/*

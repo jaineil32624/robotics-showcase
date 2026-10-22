@@ -1,0 +1,36 @@
+{
+  "name": "argo-q4-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive 3D showcase for the ARGO-Q4 quadruped robot",
+  "scripts": {
+    "predev": "node scripts/sync-assets.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/sync-assets.mjs",
+    "build": "next build",
+    "start": "npx serve out",
+    "typecheck": "tsc --noEmit",
+    "sync-assets": "node scripts/sync-assets.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
+    "next": "~15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "~0.176.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/three": "~0.176.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

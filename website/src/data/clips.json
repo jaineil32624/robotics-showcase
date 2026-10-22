@@ -1,0 +1,107 @@
+{
+  "fps": 30,
+  "frame_start": 1,
+  "frame_end": 2490,
+  "clips": [
+    {
+      "id": "power_on",
+      "label": "Power-On Sequence",
+      "desc": "Boot flicker, power-core charge, cooling fan and hydraulic pump spin-up, servo self-test.",
+      "start": 1,
+      "end": 120,
+      "frames": 120,
+      "loop": false,
+      "dur": 4.0
+    },
+    {
+      "id": "startup",
+      "label": "Mechanical Startup",
+      "desc": "Abduction calibration, synchronized stand-up from crouch and arm deployment from stowed.",
+      "start": 121,
+      "end": 330,
+      "frames": 210,
+      "loop": false,
+      "dur": 7.0
+    },
+    {
+      "id": "idle",
+      "label": "Idle",
+      "desc": "Seamless loop: suspension breathing, turret scanning, wrist micro-motions.",
+      "start": 331,
+      "end": 450,
+      "frames": 120,
+      "loop": true,
+      "dur": 4.0
+    },
+    {
+      "id": "joint_demo",
+      "label": "Joint Demonstration",
+      "desc": "Every actuator exercised in isolation: leg abduction, hip, knee, turret, shoulder, elbow, wrist and gripper, then body posture.",
+      "start": 451,
+      "end": 870,
+      "frames": 420,
+      "loop": false,
+      "dur": 14.0
+    },
+    {
+      "id": "walk",
+      "label": "Walking Cycle",
+      "desc": "Diagonal trot with planted feet, acceleration lean and inertial arm lag.",
+      "start": 871,
+      "end": 1110,
+      "frames": 240,
+      "loop": false,
+      "dur": 8.0
+    },
+    {
+      "id": "arm",
+      "label": "Arm Manipulation",
+      "desc": "Inverse-kinematics workspace sweep through five waypoints with wrist roll and gripper cycles.",
+      "start": 1111,
+      "end": 1350,
+      "frames": 240,
+      "loop": false,
+      "dur": 8.0
+    },
+    {
+      "id": "interact",
+      "label": "Object Interaction",
+      "desc": "Pick a 2 kg sample crate from the work stand and stow it on the cargo deck; suspension reacts to the payload.",
+      "start": 1351,
+      "end": 1710,
+      "frames": 360,
+      "loop": false,
+      "dur": 12.0
+    },
+    {
+      "id": "full",
+      "label": "Full Operating Mode",
+      "desc": "Autonomous patrol: trotting at 0.5 m/s while the arm scans and the lidar maps at double rate.",
+      "start": 1711,
+      "end": 2070,
+      "frames": 360,
+      "loop": false,
+      "dur": 12.0
+    },
+    {
+      "id": "shutdown",
+      "label": "Shutdown Sequence",
+      "desc": "Arm stows, body parks on the skid plate, rotating machinery spins down, power fades.",
+      "start": 2071,
+      "end": 2250,
+      "frames": 180,
+      "loop": false,
+      "dur": 6.0
+    },
+    {
+      "id": "exploded",
+      "label": "Exploded View",
+      "desc": "Every component separates along its assembly axis, holds, and re-assembles.",
+      "start": 2251,
+      "end": 2490,
+      "frames": 240,
+      "loop": false,
+      "dur": 8.0
+    }
+  ]
+}

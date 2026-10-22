@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #07090c;
+  --color-panel: #0d1116;
+  --color-panel-2: #121820;
+  --color-line: #1e2630;
+  --color-line-2: #2b3542;
+  --color-mute: #7c8796;
+  --color-soft: #aab4c1;
+  --color-fg: #e8ecf1;
+  --color-signal: #ff5a1f;
+  --color-signal-soft: #ff8a57;
+  --color-glow: #38d6ff;
+  --color-ok: #5ee0a0;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-fg);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-signal) 45%, transparent);
+}
+
+/* engineering-drawing grid used behind hero sections */
+.blueprint {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-line) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-line) 70%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 75%);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+
+.hairline {
+  border-color: var(--color-line);
+}
+
+/* range input styled as a mechanical scrubber */
+input[type="range"].scrub {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+input[type="range"].scrub::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-signal) 0%,
+    var(--color-signal) var(--p, 0%),
+    var(--color-line-2) var(--p, 0%)
+  );
+  border-radius: 2px;
+}
+input[type="range"].scrub::-moz-range-track {
+  height: 4px;
+  background: var(--color-line-2);
+  border-radius: 2px;
+}
+input[type="range"].scrub::-moz-range-progress {
+  height: 4px;
+  background: var(--color-signal);
+}
+input[type="range"].scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  border-radius: 2px;
+  background: var(--color-fg);
+  border: 2px solid var(--color-signal);
+}
+input[type="range"].scrub::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--color-fg);
+  border: 2px solid var(--color-signal);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-2) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

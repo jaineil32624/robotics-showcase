@@ -1,0 +1,831 @@
+{
+  "Chassis_Frame": {
+    "title": "Monocoque Chassis Frame",
+    "category": "frame",
+    "group": "Body",
+    "description": "CNC-machined 7075-T6 aluminium spine: twin longitudinal rails tied by two bulkheads that carry the four hip-abduction actuators. All internal modules bolt to this frame.",
+    "specs": {
+      "Material": "Al 7075-T6",
+      "Torsional stiffness": "18 kN·m/deg",
+      "Fasteners": "M5 titanium"
+    },
+    "mass_kg": 4.8
+  },
+  "Skid_Plate": {
+    "title": "Titanium Skid Plate",
+    "category": "frame",
+    "group": "Body",
+    "description": "Ventral armour plate. Protects the battery and hydraulic manifold when the robot parks or belly-lands on rough terrain.",
+    "specs": {
+      "Material": "Ti-6Al-4V 1.2 mm",
+      "Impact rating": "IK10"
+    },
+    "mass_kg": 1.1
+  },
+  "Top_Cover": {
+    "title": "Dorsal Service Cover",
+    "category": "shell",
+    "group": "Body",
+    "description": "Glass-fibre reinforced PA12 cover with integral cargo deck, vent louvres for the power electronics and twin grab rails. Removes with six captive fasteners for field service.",
+    "specs": {
+      "Material": "PA12-GF30 (SLS printed)",
+      "Deck load": "12 kg",
+      "IP rating": "IP65 with gasket"
+    },
+    "mass_kg": 1.6
+  },
+  "Side_Panel_L": {
+    "title": "Side Armour Panel (L)",
+    "category": "shell",
+    "group": "Body",
+    "description": "Impact-resistant side armour. The dark inset is a quick-release access hatch to the battery bay.",
+    "specs": {
+      "Material": "PC/ABS 3 mm",
+      "Finish": "Signal orange RAL 2008"
+    },
+    "mass_kg": 0.45
+  },
+  "Side_Panel_R": {
+    "title": "Side Armour Panel (R)",
+    "category": "shell",
+    "group": "Body",
+    "description": "Impact-resistant side armour. The dark inset is a quick-release access hatch to the battery bay.",
+    "specs": {
+      "Material": "PC/ABS 3 mm",
+      "Finish": "Signal orange RAL 2008"
+    },
+    "mass_kg": 0.45
+  },
+  "Battery_Pack": {
+    "title": "48 V Li-ion Battery Pack",
+    "category": "power",
+    "group": "Body",
+    "description": "63-cell 21700 pack in 13S5P configuration with nickel-copper bus bars and an integrated battery-management board that balances cells and reports state-of-charge over CAN-FD.",
+    "specs": {
+      "Chemistry": "Li-NMC 21700",
+      "Configuration": "13S5P",
+      "Nominal voltage": "48.1 V",
+      "Capacity": "24 Ah / 1.15 kWh",
+      "Peak discharge": "150 A"
+    },
+    "mass_kg": 6.2
+  },
+  "Power_Core": {
+    "title": "Power Distribution Core",
+    "category": "power",
+    "group": "Body",
+    "description": "Supercapacitor buffer and high-current distribution node. Absorbs regenerative braking energy from the actuators; its indicator column shows bus charge state.",
+    "specs": {
+      "Bus": "48 V DC",
+      "Buffer": "2× 165 F supercapacitor modules",
+      "Regen capture": "≈ 18 %"
+    },
+    "mass_kg": 0.7
+  },
+  "Hydraulic_Pump": {
+    "title": "Hydraulic Power Unit",
+    "category": "hydraulics",
+    "group": "Body",
+    "description": "Brushless motor driving an axial-piston pump. Supplies the four knee actuators through a proportional valve manifold at up to 21 MPa.",
+    "specs": {
+      "Motor": "BLDC 1.2 kW",
+      "Pump": "Axial piston, 1.4 cc/rev",
+      "Max pressure": "21 MPa",
+      "Flow": "6.5 L/min"
+    },
+    "mass_kg": 2.4
+  },
+  "Hydraulic_Reservoir": {
+    "title": "Pressurised Oil Reservoir",
+    "category": "hydraulics",
+    "group": "Body",
+    "description": "Bootstrap reservoir holding 0.4 L of ISO VG 32 fluid with an amber sight-glass for level checks.",
+    "specs": {
+      "Volume": "0.4 L",
+      "Fluid": "ISO VG 32",
+      "Pre-charge": "0.3 MPa"
+    },
+    "mass_kg": 0.6
+  },
+  "Hydraulic_Lines": {
+    "title": "High-Pressure Hose Set",
+    "category": "hydraulics",
+    "group": "Body",
+    "description": "Four-wire braided hoses routing pressure and return lines from the manifold to the rotary swivels at each hip.",
+    "specs": {
+      "Rating": "SAE 100R13",
+      "Bore": "6 mm"
+    },
+    "mass_kg": 0.5
+  },
+  "Gearbox_Plate": {
+    "title": "Accessory Gearbox Plate",
+    "category": "drivetrain",
+    "group": "Body",
+    "description": "Bearing plate for the accessory gear train that drives the cooling fan and auxiliary pump.",
+    "specs": {
+      "Bearings": "3× 6800-2RS"
+    },
+    "mass_kg": 0.3
+  },
+  "Gear_Drive": {
+    "title": "Drive Pinion",
+    "category": "drivetrain",
+    "group": "Body",
+    "description": "Spur gear in the accessory train (module 4 mm, 20° pressure angle). Gear speeds are kinematically coupled by tooth count in the animation.",
+    "specs": {
+      "Teeth": "20",
+      "Module": "4 mm",
+      "Pitch diameter": "80 mm",
+      "Ratio to drive": "1.000"
+    },
+    "mass_kg": 0.12
+  },
+  "Gear_Idler": {
+    "title": "Idler Gear",
+    "category": "drivetrain",
+    "group": "Body",
+    "description": "Spur gear in the accessory train (module 4 mm, 20° pressure angle). Gear speeds are kinematically coupled by tooth count in the animation.",
+    "specs": {
+      "Teeth": "14",
+      "Module": "4 mm",
+      "Pitch diameter": "56 mm",
+      "Ratio to drive": "1.429"
+    },
+    "mass_kg": 0.12
+  },
+  "Gear_Output": {
+    "title": "Output Gear",
+    "category": "drivetrain",
+    "group": "Body",
+    "description": "Spur gear in the accessory train (module 4 mm, 20° pressure angle). Gear speeds are kinematically coupled by tooth count in the animation.",
+    "specs": {
+      "Teeth": "28",
+      "Module": "4 mm",
+      "Pitch diameter": "112 mm",
+      "Ratio to drive": "0.714"
+    },
+    "mass_kg": 0.12
+  },
+  "Cooling_Duct": {
+    "title": "Cooling Duct & Radiator",
+    "category": "cooling",
+    "group": "Body",
+    "description": "Rear plenum with a finned heat exchanger for the hydraulic oil and power electronics. Air is pulled through by the axial fan.",
+    "specs": {
+      "Heat rejection": "650 W @ 35 °C ambient"
+    },
+    "mass_kg": 0.8
+  },
+  "Cooling_Fan_Rotor": {
+    "title": "Axial Cooling Fan",
+    "category": "cooling",
+    "group": "Body",
+    "description": "7-blade 120 mm axial fan, PWM-controlled from coolant temperature.",
+    "specs": {
+      "Diameter": "120 mm",
+      "Max speed": "4 800 rpm",
+      "Airflow": "190 m³/h"
+    },
+    "mass_kg": 0.15
+  },
+  "Control_Computer": {
+    "title": "Compute & Motor-Control Board",
+    "category": "electronics",
+    "group": "Body",
+    "description": "Real-time controller (1 kHz whole-body control loop) with a GPU module for perception. Talks to all 18 actuators over EtherCAT.",
+    "specs": {
+      "CPU": "8-core ARM Cortex-A78AE",
+      "AI accelerator": "100 TOPS",
+      "Control loop": "1 kHz",
+      "Field bus": "EtherCAT, 100 Mbit"
+    },
+    "mass_kg": 0.45
+  },
+  "Cable_Harness": {
+    "title": "EtherCAT / Power Harness",
+    "category": "electronics",
+    "group": "Body",
+    "description": "Shielded daisy-chain harness carrying 48 V power and EtherCAT to each leg and the sensor head.",
+    "specs": {
+      "Conductor": "AWG 12 power + Cat6A data",
+      "Connectors": "M12 X-coded"
+    },
+    "mass_kg": 0.4
+  },
+  "Sensor_Head": {
+    "title": "Perception Head",
+    "category": "sensor",
+    "group": "Body",
+    "description": "Sealed sensor housing with a dark glass visor. Carries the stereo depth cameras, a structured-light projector, status lighting and twin 5G/Wi-Fi antennas.",
+    "specs": {
+      "Field of view": "105° × 75°",
+      "Sealing": "IP67"
+    },
+    "mass_kg": 0.9
+  },
+  "Stereo_Cameras": {
+    "title": "Stereo Depth Cameras",
+    "category": "sensor",
+    "group": "Body",
+    "description": "Global-shutter stereo pair (120 mm baseline) with an IR dot projector for depth in low light.",
+    "specs": {
+      "Resolution": "1280 × 800 @ 90 fps",
+      "Baseline": "120 mm",
+      "Depth range": "0.2 – 15 m"
+    },
+    "mass_kg": 0.25
+  },
+  "Lidar_Base": {
+    "title": "Lidar Mount",
+    "category": "sensor",
+    "group": "Body",
+    "description": "Vibration-isolated lidar mount with slip ring.",
+    "specs": {
+      "Isolation": "Silicone, 40 Hz cut-off"
+    },
+    "mass_kg": 0.15
+  },
+  "Lidar_Rotor": {
+    "title": "360° Lidar",
+    "category": "sensor",
+    "group": "Body",
+    "description": "32-channel spinning lidar used for SLAM mapping and obstacle avoidance.",
+    "specs": {
+      "Channels": "32",
+      "Range": "120 m",
+      "Points/s": "640 000",
+      "Spin rate": "10 – 20 Hz"
+    },
+    "mass_kg": 0.6
+  },
+  "Arm_Slew_Bearing": {
+    "title": "Turret Slew Bearing",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Crossed-roller slew ring that carries the arm's moment loads into the chassis.",
+    "specs": {
+      "Type": "Crossed roller",
+      "Moment capacity": "420 N·m"
+    },
+    "mass_kg": 0.5
+  },
+  "Hip_Abd_Motor_FL": {
+    "title": "Hip Abduction Actuator (FL)",
+    "category": "actuator",
+    "group": "Leg FL",
+    "description": "Frameless torque motor with a 9:1 cycloidal reducer. Swings the leg sideways for lateral balance and turning.",
+    "specs": {
+      "Peak torque": "92 N·m",
+      "Speed": "28 rad/s",
+      "Reducer": "Cycloidal 9:1",
+      "Encoder": "19-bit absolute"
+    },
+    "mass_kg": 1.3
+  },
+  "Hip_Yoke_FL": {
+    "title": "Hip Yoke (FL)",
+    "category": "frame",
+    "group": "Leg FL",
+    "description": "Forged bridge bracket on the abduction output flange. It straddles the thigh hub and carries the hip-pitch servo on its outboard cheek.",
+    "specs": {
+      "Material": "Al 7075-T6 forging",
+      "Mass": "0.42 kg"
+    },
+    "mass_kg": 0.42
+  },
+  "Hip_Pitch_Servo_FL": {
+    "title": "Hip Pitch Servo (FL)",
+    "category": "actuator",
+    "group": "Leg FL",
+    "description": "High-torque servo with strain-wave gearing; swings the thigh fore and aft and provides most of the propulsive work during the trot.",
+    "specs": {
+      "Peak torque": "140 N·m",
+      "Speed": "21 rad/s",
+      "Reducer": "Strain-wave 50:1",
+      "Backlash": "< 20 arcsec"
+    },
+    "mass_kg": 1.5
+  },
+  "Thigh_FL": {
+    "title": "Upper Leg (FL)",
+    "category": "leg",
+    "group": "Leg FL",
+    "description": "Hollow carbon-composite box beam with a titanium-reinforced outboard cap. Carries the hydraulic knee cylinder's front clevis.",
+    "specs": {
+      "Length": "320 mm",
+      "Material": "CFRP / Ti-6Al-4V inserts",
+      "Mass": "0.95 kg"
+    },
+    "mass_kg": 0.95
+  },
+  "Knee_Bearing_FL": {
+    "title": "Knee Bearing Assembly (FL)",
+    "category": "drivetrain",
+    "group": "Leg FL",
+    "description": "Preloaded tapered-roller bearing pair with double-lip seals; the knee is the most heavily loaded joint during landing.",
+    "specs": {
+      "Bearing": "2× 32005 tapered roller",
+      "Static load": "14 kN"
+    },
+    "mass_kg": 0.35
+  },
+  "Shin_FL": {
+    "title": "Lower Leg & Damper (FL)",
+    "category": "leg",
+    "group": "Leg FL",
+    "description": "Tapered aluminium tube with an integral coil-over damper that absorbs foot-strike impacts. The heel lever above the knee transfers hydraulic force into knee torque.",
+    "specs": {
+      "Length": "340 mm",
+      "Damper travel": "18 mm",
+      "Spring rate": "38 N/mm"
+    },
+    "mass_kg": 0.7
+  },
+  "Foot_FL": {
+    "title": "Foot Pad (FL)",
+    "category": "leg",
+    "group": "Leg FL",
+    "description": "Over-moulded polyurethane foot with a six-axis force/torque sensor in the ankle collar for contact detection.",
+    "specs": {
+      "Material": "PU Shore 70A",
+      "Contact sensor": "6-axis F/T, 1 kHz"
+    },
+    "mass_kg": 0.2
+  },
+  "Hip_Abd_Motor_FR": {
+    "title": "Hip Abduction Actuator (FR)",
+    "category": "actuator",
+    "group": "Leg FR",
+    "description": "Frameless torque motor with a 9:1 cycloidal reducer. Swings the leg sideways for lateral balance and turning.",
+    "specs": {
+      "Peak torque": "92 N·m",
+      "Speed": "28 rad/s",
+      "Reducer": "Cycloidal 9:1",
+      "Encoder": "19-bit absolute"
+    },
+    "mass_kg": 1.3
+  },
+  "Hip_Yoke_FR": {
+    "title": "Hip Yoke (FR)",
+    "category": "frame",
+    "group": "Leg FR",
+    "description": "Forged bridge bracket on the abduction output flange. It straddles the thigh hub and carries the hip-pitch servo on its outboard cheek.",
+    "specs": {
+      "Material": "Al 7075-T6 forging",
+      "Mass": "0.42 kg"
+    },
+    "mass_kg": 0.42
+  },
+  "Hip_Pitch_Servo_FR": {
+    "title": "Hip Pitch Servo (FR)",
+    "category": "actuator",
+    "group": "Leg FR",
+    "description": "High-torque servo with strain-wave gearing; swings the thigh fore and aft and provides most of the propulsive work during the trot.",
+    "specs": {
+      "Peak torque": "140 N·m",
+      "Speed": "21 rad/s",
+      "Reducer": "Strain-wave 50:1",
+      "Backlash": "< 20 arcsec"
+    },
+    "mass_kg": 1.5
+  },
+  "Thigh_FR": {
+    "title": "Upper Leg (FR)",
+    "category": "leg",
+    "group": "Leg FR",
+    "description": "Hollow carbon-composite box beam with a titanium-reinforced outboard cap. Carries the hydraulic knee cylinder's front clevis.",
+    "specs": {
+      "Length": "320 mm",
+      "Material": "CFRP / Ti-6Al-4V inserts",
+      "Mass": "0.95 kg"
+    },
+    "mass_kg": 0.95
+  },
+  "Knee_Bearing_FR": {
+    "title": "Knee Bearing Assembly (FR)",
+    "category": "drivetrain",
+    "group": "Leg FR",
+    "description": "Preloaded tapered-roller bearing pair with double-lip seals; the knee is the most heavily loaded joint during landing.",
+    "specs": {
+      "Bearing": "2× 32005 tapered roller",
+      "Static load": "14 kN"
+    },
+    "mass_kg": 0.35
+  },
+  "Shin_FR": {
+    "title": "Lower Leg & Damper (FR)",
+    "category": "leg",
+    "group": "Leg FR",
+    "description": "Tapered aluminium tube with an integral coil-over damper that absorbs foot-strike impacts. The heel lever above the knee transfers hydraulic force into knee torque.",
+    "specs": {
+      "Length": "340 mm",
+      "Damper travel": "18 mm",
+      "Spring rate": "38 N/mm"
+    },
+    "mass_kg": 0.7
+  },
+  "Foot_FR": {
+    "title": "Foot Pad (FR)",
+    "category": "leg",
+    "group": "Leg FR",
+    "description": "Over-moulded polyurethane foot with a six-axis force/torque sensor in the ankle collar for contact detection.",
+    "specs": {
+      "Material": "PU Shore 70A",
+      "Contact sensor": "6-axis F/T, 1 kHz"
+    },
+    "mass_kg": 0.2
+  },
+  "Hip_Abd_Motor_RL": {
+    "title": "Hip Abduction Actuator (RL)",
+    "category": "actuator",
+    "group": "Leg RL",
+    "description": "Frameless torque motor with a 9:1 cycloidal reducer. Swings the leg sideways for lateral balance and turning.",
+    "specs": {
+      "Peak torque": "92 N·m",
+      "Speed": "28 rad/s",
+      "Reducer": "Cycloidal 9:1",
+      "Encoder": "19-bit absolute"
+    },
+    "mass_kg": 1.3
+  },
+  "Hip_Yoke_RL": {
+    "title": "Hip Yoke (RL)",
+    "category": "frame",
+    "group": "Leg RL",
+    "description": "Forged bridge bracket on the abduction output flange. It straddles the thigh hub and carries the hip-pitch servo on its outboard cheek.",
+    "specs": {
+      "Material": "Al 7075-T6 forging",
+      "Mass": "0.42 kg"
+    },
+    "mass_kg": 0.42
+  },
+  "Hip_Pitch_Servo_RL": {
+    "title": "Hip Pitch Servo (RL)",
+    "category": "actuator",
+    "group": "Leg RL",
+    "description": "High-torque servo with strain-wave gearing; swings the thigh fore and aft and provides most of the propulsive work during the trot.",
+    "specs": {
+      "Peak torque": "140 N·m",
+      "Speed": "21 rad/s",
+      "Reducer": "Strain-wave 50:1",
+      "Backlash": "< 20 arcsec"
+    },
+    "mass_kg": 1.5
+  },
+  "Thigh_RL": {
+    "title": "Upper Leg (RL)",
+    "category": "leg",
+    "group": "Leg RL",
+    "description": "Hollow carbon-composite box beam with a titanium-reinforced outboard cap. Carries the hydraulic knee cylinder's front clevis.",
+    "specs": {
+      "Length": "320 mm",
+      "Material": "CFRP / Ti-6Al-4V inserts",
+      "Mass": "0.95 kg"
+    },
+    "mass_kg": 0.95
+  },
+  "Knee_Bearing_RL": {
+    "title": "Knee Bearing Assembly (RL)",
+    "category": "drivetrain",
+    "group": "Leg RL",
+    "description": "Preloaded tapered-roller bearing pair with double-lip seals; the knee is the most heavily loaded joint during landing.",
+    "specs": {
+      "Bearing": "2× 32005 tapered roller",
+      "Static load": "14 kN"
+    },
+    "mass_kg": 0.35
+  },
+  "Shin_RL": {
+    "title": "Lower Leg & Damper (RL)",
+    "category": "leg",
+    "group": "Leg RL",
+    "description": "Tapered aluminium tube with an integral coil-over damper that absorbs foot-strike impacts. The heel lever above the knee transfers hydraulic force into knee torque.",
+    "specs": {
+      "Length": "340 mm",
+      "Damper travel": "18 mm",
+      "Spring rate": "38 N/mm"
+    },
+    "mass_kg": 0.7
+  },
+  "Foot_RL": {
+    "title": "Foot Pad (RL)",
+    "category": "leg",
+    "group": "Leg RL",
+    "description": "Over-moulded polyurethane foot with a six-axis force/torque sensor in the ankle collar for contact detection.",
+    "specs": {
+      "Material": "PU Shore 70A",
+      "Contact sensor": "6-axis F/T, 1 kHz"
+    },
+    "mass_kg": 0.2
+  },
+  "Hip_Abd_Motor_RR": {
+    "title": "Hip Abduction Actuator (RR)",
+    "category": "actuator",
+    "group": "Leg RR",
+    "description": "Frameless torque motor with a 9:1 cycloidal reducer. Swings the leg sideways for lateral balance and turning.",
+    "specs": {
+      "Peak torque": "92 N·m",
+      "Speed": "28 rad/s",
+      "Reducer": "Cycloidal 9:1",
+      "Encoder": "19-bit absolute"
+    },
+    "mass_kg": 1.3
+  },
+  "Hip_Yoke_RR": {
+    "title": "Hip Yoke (RR)",
+    "category": "frame",
+    "group": "Leg RR",
+    "description": "Forged bridge bracket on the abduction output flange. It straddles the thigh hub and carries the hip-pitch servo on its outboard cheek.",
+    "specs": {
+      "Material": "Al 7075-T6 forging",
+      "Mass": "0.42 kg"
+    },
+    "mass_kg": 0.42
+  },
+  "Hip_Pitch_Servo_RR": {
+    "title": "Hip Pitch Servo (RR)",
+    "category": "actuator",
+    "group": "Leg RR",
+    "description": "High-torque servo with strain-wave gearing; swings the thigh fore and aft and provides most of the propulsive work during the trot.",
+    "specs": {
+      "Peak torque": "140 N·m",
+      "Speed": "21 rad/s",
+      "Reducer": "Strain-wave 50:1",
+      "Backlash": "< 20 arcsec"
+    },
+    "mass_kg": 1.5
+  },
+  "Thigh_RR": {
+    "title": "Upper Leg (RR)",
+    "category": "leg",
+    "group": "Leg RR",
+    "description": "Hollow carbon-composite box beam with a titanium-reinforced outboard cap. Carries the hydraulic knee cylinder's front clevis.",
+    "specs": {
+      "Length": "320 mm",
+      "Material": "CFRP / Ti-6Al-4V inserts",
+      "Mass": "0.95 kg"
+    },
+    "mass_kg": 0.95
+  },
+  "Knee_Bearing_RR": {
+    "title": "Knee Bearing Assembly (RR)",
+    "category": "drivetrain",
+    "group": "Leg RR",
+    "description": "Preloaded tapered-roller bearing pair with double-lip seals; the knee is the most heavily loaded joint during landing.",
+    "specs": {
+      "Bearing": "2× 32005 tapered roller",
+      "Static load": "14 kN"
+    },
+    "mass_kg": 0.35
+  },
+  "Shin_RR": {
+    "title": "Lower Leg & Damper (RR)",
+    "category": "leg",
+    "group": "Leg RR",
+    "description": "Tapered aluminium tube with an integral coil-over damper that absorbs foot-strike impacts. The heel lever above the knee transfers hydraulic force into knee torque.",
+    "specs": {
+      "Length": "340 mm",
+      "Damper travel": "18 mm",
+      "Spring rate": "38 N/mm"
+    },
+    "mass_kg": 0.7
+  },
+  "Foot_RR": {
+    "title": "Foot Pad (RR)",
+    "category": "leg",
+    "group": "Leg RR",
+    "description": "Over-moulded polyurethane foot with a six-axis force/torque sensor in the ankle collar for contact detection.",
+    "specs": {
+      "Material": "PU Shore 70A",
+      "Contact sensor": "6-axis F/T, 1 kHz"
+    },
+    "mass_kg": 0.2
+  },
+  "Arm_Turret": {
+    "title": "Arm Turret",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Rotating base of the manipulator. Its single-sided cheek carries the shoulder actuator so the forearm can fold flat beside the upper arm when stowed.",
+    "specs": {
+      "Slew range": "± 270°",
+      "Slew speed": "180 °/s"
+    },
+    "mass_kg": 1.2
+  },
+  "Shoulder_Actuator": {
+    "title": "Shoulder Actuator",
+    "category": "actuator",
+    "group": "Arm",
+    "description": "Strain-wave servo lifting the whole arm. Sized for a 5 kg payload at full reach.",
+    "specs": {
+      "Peak torque": "110 N·m",
+      "Reducer": "Strain-wave 100:1",
+      "Encoder": "Dual 20-bit"
+    },
+    "mass_kg": 1.1
+  },
+  "Arm_Upper": {
+    "title": "Upper Arm Link",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Hollow PA12-CF link with an internal cable channel. Elbow motor bolts to its distal end.",
+    "specs": {
+      "Length": "400 mm",
+      "Material": "PA12-CF (SLS)"
+    },
+    "mass_kg": 0.9
+  },
+  "Elbow_Actuator": {
+    "title": "Elbow Actuator",
+    "category": "actuator",
+    "group": "Arm",
+    "description": "Through-shaft elbow servo; the forearm runs beside the upper arm on its output flange.",
+    "specs": {
+      "Peak torque": "62 N·m",
+      "Reducer": "Strain-wave 80:1"
+    },
+    "mass_kg": 0.75
+  },
+  "Arm_Forearm": {
+    "title": "Forearm Link",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Lightweight forearm with an embedded wrist cable loom.",
+    "specs": {
+      "Length": "360 mm",
+      "Material": "PA12-CF (SLS)"
+    },
+    "mass_kg": 0.55
+  },
+  "Wrist_Pitch_Servo": {
+    "title": "Wrist Pitch Servo",
+    "category": "actuator",
+    "group": "Arm",
+    "description": "Compact servo that pitches the end effector.",
+    "specs": {
+      "Peak torque": "18 N·m"
+    },
+    "mass_kg": 0.35
+  },
+  "Wrist_Housing": {
+    "title": "Wrist Roll Module",
+    "category": "actuator",
+    "group": "Arm",
+    "description": "Continuous-rotation wrist roll drive with a slip ring - the gripper can spin endlessly.",
+    "specs": {
+      "Roll range": "Continuous",
+      "Speed": "360 °/s"
+    },
+    "mass_kg": 0.3
+  },
+  "Gripper_Palm": {
+    "title": "Parallel Gripper Body",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Lead-screw parallel gripper: one motor drives a left/right-hand screw so both fingers close symmetrically on linear rails. A camera between the fingers guides the final approach.",
+    "specs": {
+      "Stroke": "12 – 144 mm",
+      "Grip force": "120 N",
+      "Payload": "5 kg"
+    },
+    "mass_kg": 0.6
+  },
+  "Gripper_Finger_L": {
+    "title": "Gripper Finger (L)",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Aluminium finger with a replaceable silicone friction pad.",
+    "specs": {
+      "Pad": "Silicone Shore 40A"
+    },
+    "mass_kg": 0.08
+  },
+  "Gripper_Finger_R": {
+    "title": "Gripper Finger (R)",
+    "category": "arm",
+    "group": "Arm",
+    "description": "Aluminium finger with a replaceable silicone friction pad.",
+    "specs": {
+      "Pad": "Silicone Shore 40A"
+    },
+    "mass_kg": 0.08
+  },
+  "Work_Stand": {
+    "title": "Work Stand",
+    "category": "prop",
+    "group": "Props",
+    "description": "Steel test stand used for the pick-and-place demonstration.",
+    "specs": {
+      "Height": "300 mm"
+    },
+    "mass_kg": 6.0
+  },
+  "Sample_Crate": {
+    "title": "Sample Crate (2 kg)",
+    "category": "prop",
+    "group": "Props",
+    "description": "Ruggedised 120 mm sample container used in the object-interaction demo.",
+    "specs": {
+      "Mass": "2.0 kg",
+      "Edge": "120 mm"
+    },
+    "mass_kg": 2.0
+  },
+  "Knee_Cylinder_FL": {
+    "title": "Knee Hydraulic Cylinder (FL)",
+    "category": "hydraulics",
+    "group": "Leg FL",
+    "description": "Double-acting hydraulic cylinder that drives the knee through the heel lever - the 'quadriceps' of the leg. Its rod extends as the knee straightens.",
+    "specs": {
+      "Bore": "32 mm",
+      "Rod": "16 mm",
+      "Stroke": "238 mm design",
+      "Force @ 21 MPa": "16.9 kN push"
+    },
+    "mass_kg": 0.55
+  },
+  "Knee_Rod_FL": {
+    "title": "Knee Piston Rod (FL)",
+    "category": "hydraulics",
+    "group": "Leg FL",
+    "description": "Hard-chromed piston rod with a spherical-bearing rod eye pinned to the heel lever.",
+    "specs": {
+      "Diameter": "16 mm",
+      "Coating": "Hard chrome 25 µm"
+    },
+    "mass_kg": 0.25
+  },
+  "Knee_Cylinder_FR": {
+    "title": "Knee Hydraulic Cylinder (FR)",
+    "category": "hydraulics",
+    "group": "Leg FR",
+    "description": "Double-acting hydraulic cylinder that drives the knee through the heel lever - the 'quadriceps' of the leg. Its rod extends as the knee straightens.",
+    "specs": {
+      "Bore": "32 mm",
+      "Rod": "16 mm",
+      "Stroke": "238 mm design",
+      "Force @ 21 MPa": "16.9 kN push"
+    },
+    "mass_kg": 0.55
+  },
+  "Knee_Rod_FR": {
+    "title": "Knee Piston Rod (FR)",
+    "category": "hydraulics",
+    "group": "Leg FR",
+    "description": "Hard-chromed piston rod with a spherical-bearing rod eye pinned to the heel lever.",
+    "specs": {
+      "Diameter": "16 mm",
+      "Coating": "Hard chrome 25 µm"
+    },
+    "mass_kg": 0.25
+  },
+  "Knee_Cylinder_RL": {
+    "title": "Knee Hydraulic Cylinder (RL)",
+    "category": "hydraulics",
+    "group": "Leg RL",
+    "description": "Double-acting hydraulic cylinder that drives the knee through the heel lever - the 'quadriceps' of the leg. Its rod extends as the knee straightens.",
+    "specs": {
+      "Bore": "32 mm",
+      "Rod": "16 mm",
+      "Stroke": "238 mm design",
+      "Force @ 21 MPa": "16.9 kN push"
+    },
+    "mass_kg": 0.55
+  },
+  "Knee_Rod_RL": {
+    "title": "Knee Piston Rod (RL)",
+    "category": "hydraulics",
+    "group": "Leg RL",
+    "description": "Hard-chromed piston rod with a spherical-bearing rod eye pinned to the heel lever.",
+    "specs": {
+      "Diameter": "16 mm",
+      "Coating": "Hard chrome 25 µm"
+    },
+    "mass_kg": 0.25
+  },
+  "Knee_Cylinder_RR": {
+    "title": "Knee Hydraulic Cylinder (RR)",
+    "category": "hydraulics",
+    "group": "Leg RR",
+    "description": "Double-acting hydraulic cylinder that drives the knee through the heel lever - the 'quadriceps' of the leg. Its rod extends as the knee straightens.",
+    "specs": {
+      "Bore": "32 mm",
+      "Rod": "16 mm",
+      "Stroke": "238 mm design",
+      "Force @ 21 MPa": "16.9 kN push"
+    },
+    "mass_kg": 0.55
+  },
+  "Knee_Rod_RR": {
+    "title": "Knee Piston Rod (RR)",
+    "category": "hydraulics",
+    "group": "Leg RR",
+    "description": "Hard-chromed piston rod with a spherical-bearing rod eye pinned to the heel lever.",
+    "specs": {
+      "Diameter": "16 mm",
+      "Coating": "Hard chrome 25 µm"
+    },
+    "mass_kg": 0.25
+  }
+}
