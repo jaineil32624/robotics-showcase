@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Blender autosaves / backups
+*.blend1
+*.blend2
+
+# Blender default export folder when run locally
+/export/
