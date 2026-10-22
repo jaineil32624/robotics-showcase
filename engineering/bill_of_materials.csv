@@ -1,0 +1,72 @@
+part_id,title,category,group,mass_kg,key_spec
+Chassis_Frame,Monocoque Chassis Frame,frame,Body,4.8,Material: Al 7075-T6; Torsional stiffness: 18 kN·m/deg
+Skid_Plate,Titanium Skid Plate,frame,Body,1.1,Material: Ti-6Al-4V 1.2 mm; Impact rating: IK10
+Top_Cover,Dorsal Service Cover,shell,Body,1.6,Material: PA12-GF30 (SLS printed); Deck load: 12 kg
+Side_Panel_L,Side Armour Panel (L),shell,Body,0.45,Material: PC/ABS 3 mm; Finish: Signal orange RAL 2008
+Side_Panel_R,Side Armour Panel (R),shell,Body,0.45,Material: PC/ABS 3 mm; Finish: Signal orange RAL 2008
+Battery_Pack,48 V Li-ion Battery Pack,power,Body,6.2,Chemistry: Li-NMC 21700; Configuration: 13S5P
+Power_Core,Power Distribution Core,power,Body,0.7,Bus: 48 V DC; Buffer: 2× 165 F supercapacitor modules
+Hydraulic_Pump,Hydraulic Power Unit,hydraulics,Body,2.4,"Motor: BLDC 1.2 kW; Pump: Axial piston, 1.4 cc/rev"
+Hydraulic_Reservoir,Pressurised Oil Reservoir,hydraulics,Body,0.6,Volume: 0.4 L; Fluid: ISO VG 32
+Hydraulic_Lines,High-Pressure Hose Set,hydraulics,Body,0.5,Rating: SAE 100R13; Bore: 6 mm
+Gearbox_Plate,Accessory Gearbox Plate,drivetrain,Body,0.3,Bearings: 3× 6800-2RS
+Gear_Drive,Drive Pinion,drivetrain,Body,0.12,Teeth: 20; Module: 4 mm
+Gear_Idler,Idler Gear,drivetrain,Body,0.12,Teeth: 14; Module: 4 mm
+Gear_Output,Output Gear,drivetrain,Body,0.12,Teeth: 28; Module: 4 mm
+Cooling_Duct,Cooling Duct & Radiator,cooling,Body,0.8,Heat rejection: 650 W @ 35 °C ambient
+Cooling_Fan_Rotor,Axial Cooling Fan,cooling,Body,0.15,Diameter: 120 mm; Max speed: 4 800 rpm
+Control_Computer,Compute & Motor-Control Board,electronics,Body,0.45,CPU: 8-core ARM Cortex-A78AE; AI accelerator: 100 TOPS
+Cable_Harness,EtherCAT / Power Harness,electronics,Body,0.4,Conductor: AWG 12 power + Cat6A data; Connectors: M12 X-coded
+Sensor_Head,Perception Head,sensor,Body,0.9,Field of view: 105° × 75°; Sealing: IP67
+Stereo_Cameras,Stereo Depth Cameras,sensor,Body,0.25,Resolution: 1280 × 800 @ 90 fps; Baseline: 120 mm
+Lidar_Base,Lidar Mount,sensor,Body,0.15,"Isolation: Silicone, 40 Hz cut-off"
+Lidar_Rotor,360° Lidar,sensor,Body,0.6,Channels: 32; Range: 120 m
+Arm_Slew_Bearing,Turret Slew Bearing,arm,Arm,0.5,Type: Crossed roller; Moment capacity: 420 N·m
+Hip_Abd_Motor_FL,Hip Abduction Actuator (FL),actuator,Leg FL,1.3,Peak torque: 92 N·m; Speed: 28 rad/s
+Hip_Yoke_FL,Hip Yoke (FL),frame,Leg FL,0.42,Material: Al 7075-T6 forging; Mass: 0.42 kg
+Hip_Pitch_Servo_FL,Hip Pitch Servo (FL),actuator,Leg FL,1.5,Peak torque: 140 N·m; Speed: 21 rad/s
+Thigh_FL,Upper Leg (FL),leg,Leg FL,0.95,Length: 320 mm; Material: CFRP / Ti-6Al-4V inserts
+Knee_Bearing_FL,Knee Bearing Assembly (FL),drivetrain,Leg FL,0.35,Bearing: 2× 32005 tapered roller; Static load: 14 kN
+Shin_FL,Lower Leg & Damper (FL),leg,Leg FL,0.7,Length: 340 mm; Damper travel: 18 mm
+Foot_FL,Foot Pad (FL),leg,Leg FL,0.2,"Material: PU Shore 70A; Contact sensor: 6-axis F/T, 1 kHz"
+Hip_Abd_Motor_FR,Hip Abduction Actuator (FR),actuator,Leg FR,1.3,Peak torque: 92 N·m; Speed: 28 rad/s
+Hip_Yoke_FR,Hip Yoke (FR),frame,Leg FR,0.42,Material: Al 7075-T6 forging; Mass: 0.42 kg
+Hip_Pitch_Servo_FR,Hip Pitch Servo (FR),actuator,Leg FR,1.5,Peak torque: 140 N·m; Speed: 21 rad/s
+Thigh_FR,Upper Leg (FR),leg,Leg FR,0.95,Length: 320 mm; Material: CFRP / Ti-6Al-4V inserts
+Knee_Bearing_FR,Knee Bearing Assembly (FR),drivetrain,Leg FR,0.35,Bearing: 2× 32005 tapered roller; Static load: 14 kN
+Shin_FR,Lower Leg & Damper (FR),leg,Leg FR,0.7,Length: 340 mm; Damper travel: 18 mm
+Foot_FR,Foot Pad (FR),leg,Leg FR,0.2,"Material: PU Shore 70A; Contact sensor: 6-axis F/T, 1 kHz"
+Hip_Abd_Motor_RL,Hip Abduction Actuator (RL),actuator,Leg RL,1.3,Peak torque: 92 N·m; Speed: 28 rad/s
+Hip_Yoke_RL,Hip Yoke (RL),frame,Leg RL,0.42,Material: Al 7075-T6 forging; Mass: 0.42 kg
+Hip_Pitch_Servo_RL,Hip Pitch Servo (RL),actuator,Leg RL,1.5,Peak torque: 140 N·m; Speed: 21 rad/s
+Thigh_RL,Upper Leg (RL),leg,Leg RL,0.95,Length: 320 mm; Material: CFRP / Ti-6Al-4V inserts
+Knee_Bearing_RL,Knee Bearing Assembly (RL),drivetrain,Leg RL,0.35,Bearing: 2× 32005 tapered roller; Static load: 14 kN
+Shin_RL,Lower Leg & Damper (RL),leg,Leg RL,0.7,Length: 340 mm; Damper travel: 18 mm
+Foot_RL,Foot Pad (RL),leg,Leg RL,0.2,"Material: PU Shore 70A; Contact sensor: 6-axis F/T, 1 kHz"
+Hip_Abd_Motor_RR,Hip Abduction Actuator (RR),actuator,Leg RR,1.3,Peak torque: 92 N·m; Speed: 28 rad/s
+Hip_Yoke_RR,Hip Yoke (RR),frame,Leg RR,0.42,Material: Al 7075-T6 forging; Mass: 0.42 kg
+Hip_Pitch_Servo_RR,Hip Pitch Servo (RR),actuator,Leg RR,1.5,Peak torque: 140 N·m; Speed: 21 rad/s
+Thigh_RR,Upper Leg (RR),leg,Leg RR,0.95,Length: 320 mm; Material: CFRP / Ti-6Al-4V inserts
+Knee_Bearing_RR,Knee Bearing Assembly (RR),drivetrain,Leg RR,0.35,Bearing: 2× 32005 tapered roller; Static load: 14 kN
+Shin_RR,Lower Leg & Damper (RR),leg,Leg RR,0.7,Length: 340 mm; Damper travel: 18 mm
+Foot_RR,Foot Pad (RR),leg,Leg RR,0.2,"Material: PU Shore 70A; Contact sensor: 6-axis F/T, 1 kHz"
+Arm_Turret,Arm Turret,arm,Arm,1.2,Slew range: ± 270°; Slew speed: 180 °/s
+Shoulder_Actuator,Shoulder Actuator,actuator,Arm,1.1,Peak torque: 110 N·m; Reducer: Strain-wave 100:1
+Arm_Upper,Upper Arm Link,arm,Arm,0.9,Length: 400 mm; Material: PA12-CF (SLS)
+Elbow_Actuator,Elbow Actuator,actuator,Arm,0.75,Peak torque: 62 N·m; Reducer: Strain-wave 80:1
+Arm_Forearm,Forearm Link,arm,Arm,0.55,Length: 360 mm; Material: PA12-CF (SLS)
+Wrist_Pitch_Servo,Wrist Pitch Servo,actuator,Arm,0.35,Peak torque: 18 N·m
+Wrist_Housing,Wrist Roll Module,actuator,Arm,0.3,Roll range: Continuous; Speed: 360 °/s
+Gripper_Palm,Parallel Gripper Body,arm,Arm,0.6,Stroke: 12 – 144 mm; Grip force: 120 N
+Gripper_Finger_L,Gripper Finger (L),arm,Arm,0.08,Pad: Silicone Shore 40A
+Gripper_Finger_R,Gripper Finger (R),arm,Arm,0.08,Pad: Silicone Shore 40A
+Work_Stand,Work Stand,prop,Props,6.0,Height: 300 mm
+Sample_Crate,Sample Crate (2 kg),prop,Props,2.0,Mass: 2.0 kg; Edge: 120 mm
+Knee_Cylinder_FL,Knee Hydraulic Cylinder (FL),hydraulics,Leg FL,0.55,Bore: 32 mm; Rod: 16 mm
+Knee_Rod_FL,Knee Piston Rod (FL),hydraulics,Leg FL,0.25,Diameter: 16 mm; Coating: Hard chrome 25 µm
+Knee_Cylinder_FR,Knee Hydraulic Cylinder (FR),hydraulics,Leg FR,0.55,Bore: 32 mm; Rod: 16 mm
+Knee_Rod_FR,Knee Piston Rod (FR),hydraulics,Leg FR,0.25,Diameter: 16 mm; Coating: Hard chrome 25 µm
+Knee_Cylinder_RL,Knee Hydraulic Cylinder (RL),hydraulics,Leg RL,0.55,Bore: 32 mm; Rod: 16 mm
+Knee_Rod_RL,Knee Piston Rod (RL),hydraulics,Leg RL,0.25,Diameter: 16 mm; Coating: Hard chrome 25 µm
+Knee_Cylinder_RR,Knee Hydraulic Cylinder (RR),hydraulics,Leg RR,0.55,Bore: 32 mm; Rod: 16 mm
+Knee_Rod_RR,Knee Piston Rod (RR),hydraulics,Leg RR,0.25,Diameter: 16 mm; Coating: Hard chrome 25 µm
