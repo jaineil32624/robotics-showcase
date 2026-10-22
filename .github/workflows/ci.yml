@@ -1,0 +1,132 @@
+name: CI / Build / Deploy
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  motion-tests:
+    name: Kinematics tests (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: IK round-trip, planted feet, joint limits
+        run: python blender/tests/test_motion.py
+
+  website:
+    name: Website (Next.js static export)
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_BASE_PATH: /robotics-showcase
+      NEXT_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install
+        working-directory: website
+        run: npm install --no-audit --no-fund
+      - name: Type-check
+        working-directory: website
+        run: npm run sync-assets && npm run typecheck
+      - name: Build
+        working-directory: website
+        run: npm run build
+      - name: Smoke-test & screenshots (headless Chromium, SwiftShader WebGL)
+        working-directory: website
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.52.0 serve-handler@6.1.6
+          npx playwright install --with-deps chromium
+          node scripts/capture.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-screenshots
+          path: website/capture/
+          if-no-files-found: ignore
+      - name: Upload lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-lockfile
+          path: website/package-lock.json
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/out
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/main'
+    needs: [website, motion-tests]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+  android:
+    name: Android APK (Expo / React Native)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Install
+        working-directory: mobile-app
+        run: npm install --no-audit --no-fund
+      - name: Align native module versions with the Expo SDK
+        working-directory: mobile-app
+        run: npx expo install --fix
+      - name: Bundle offline WebGL viewer
+        working-directory: mobile-app
+        run: npm run build:viewer
+      - name: Type-check
+        working-directory: mobile-app
+        run: npm run typecheck
+      - name: Generate native Android project
+        working-directory: mobile-app
+        run: npx expo prebuild --platform android --no-install
+      - name: Assemble release APK
+        working-directory: mobile-app/android
+        run: ./gradlew assembleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a,armeabi-v7a,x86_64
+      - name: Rename APK
+        run: cp mobile-app/android/app/build/outputs/apk/release/app-release.apk ARGO-Q4-v1.0.0.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ARGO-Q4-apk
+          path: ARGO-Q4-v1.0.0.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mobile-lockfile
+          path: mobile-app/package-lock.json
+      - name: Attach APK to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ARGO-Q4-v1.0.0.apk
+          generate_release_notes: true
