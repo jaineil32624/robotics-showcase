@@ -54,6 +54,18 @@ jobs:
           npm install --no-save --no-audit --no-fund playwright@1.52.0 serve-handler@6.1.6
           npx playwright install --with-deps chromium
           node scripts/capture.mjs
+      - name: Publish screenshots to the ci-captures branch
+        if: always() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -e
+          [ -d website/capture ] || exit 0
+          mkdir /tmp/cap && cp website/capture/* /tmp/cap/
+          cd /tmp/cap
+          git init -q -b ci-captures
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "CI captures for ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-captures
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
