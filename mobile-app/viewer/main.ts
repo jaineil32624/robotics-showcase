@@ -109,6 +109,9 @@ function applyQuality(q: number) {
   resize();
 }
 
+/** Portrait phones need the camera further back so the whole robot fits. */
+const fitScale = () => (window.innerWidth / Math.max(window.innerHeight, 1) < 0.9 ? 1.85 : 1);
+
 function resize() {
   const w = window.innerWidth;
   const h = window.innerHeight;
@@ -198,13 +201,16 @@ window.argo = {
   view: (v: View) => {
     const [p, t] = VIEWS[v] ?? VIEWS.iso;
     const off = rootPos();
-    goTo(new THREE.Vector3(...p).add(off), new THREE.Vector3(...t).add(off));
+    const target = new THREE.Vector3(...t);
+    const pos = new THREE.Vector3(...p).sub(target).multiplyScalar(fitScale()).add(target);
+    goTo(pos.add(off), target.add(off));
   },
 } as unknown as Window["argo"];
 
 // ---------------------------------------------------------------- boot
 async function boot() {
   applyQuality(quality);
+  camera.position.sub(controls.target).multiplyScalar(fitScale()).add(controls.target);
   const bar = document.getElementById("bar");
   bar?.style.setProperty("--p", "40%");
   const b64 = window.ARGO_MODEL_B64;

@@ -132,7 +132,7 @@ function Telemetry({ perf }: { perf: { fps: number; calls: number; tris: number 
         <span className="text-fg">{clip ? clip.start + Math.round(s.time * clips.fps) : 0}</span>
       </div>
       <div>
-        PARTS <span className="text-fg">{Object.keys(parts).length}</span> · DOF <span className="text-fg">18</span>
+        PARTS <span className="text-fg">{Object.values(parts).filter((p) => p.category !== "prop").length}</span> · DOF <span className="text-fg">18</span>
       </div>
       {perf && (
         <div>

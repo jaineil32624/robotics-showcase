@@ -12,7 +12,7 @@ import {
   useProgress,
 } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Robot, type RobotProps } from "./Robot";
@@ -158,7 +158,15 @@ export default function Scene({
 }: SceneProps) {
   const { autoRotate } = useRobot();
   const [quality, setQuality] = useState(q0);
-  const p = PRESETS[initialView];
+  // narrow / portrait screens need the camera further back to fit the robot
+  const p = useMemo(() => {
+    const base = PRESETS[initialView];
+    const narrow = typeof window !== "undefined" && window.innerWidth / Math.max(window.innerHeight, 1) < 0.9;
+    if (!narrow) return base;
+    const k = 1.85;
+    const pos = base.pos.map((v, i) => base.target[i] + (v - base.target[i]) * k) as [number, number, number];
+    return { pos, target: base.target };
+  }, [initialView]);
   return (
     <div className={className}>
       <Canvas
